@@ -16,24 +16,12 @@ def start_game():
             elif question < random_number:
                 print("It's higher")
             else:
-                #question == random_number
-                    print("That is correct! You picked the right number in {} tries".format(attempts))
-                    #break
-                    new_game = input("Would you like to play again? [Yes/No] ")
-                    #if new_game.lower() == "yes":
-                        #start_game()
-                    #else:
-                        #print("stop")
-                        #break
-                
-                    while new_game.lower() == "yes":
-                        if new_game.lower() == "yes":
-                            start_game()
-                        else:
-                            #print("Thank you for playing")
-                            break 
-                    print("try")
-                    break
+                print("That is correct! You picked the right number in {} tries".format(attempts)) 
+                new_game = input("Would you like to play again? [Yes/No] ")
+                if new_game.lower() == "yes":
+                    start_game()
+                break
+                  
             print(random_number)#this will need to be deleted but for now it is helping me to track the inputs      
             print(attempts)#this will need to be deleted but for now it is helping me to track the inputs
         except ValueError:
