@@ -1,0 +1,24 @@
+import random
+
+def start_game():
+    player_input= input("Would you like to play a number guessing game? [Yes/No] ")
+    random_number = random.randint(1,10)
+    attempts = 0
+    while player_input.lower() == "yes":
+        
+        question = int(input("Please pick a number between 1 and 10: "))
+        attempts += 1
+        
+        if question > random_number:
+            print("It's lower")
+        elif question < random_number:
+            print("It's higher")
+        
+        else: #question == random_number:
+            print("That is correct! You picked the right number in {} tries".format(attempts))
+            new_game = input("Would you like to play again? [Yes/No] ")
+            if new_game.lower() == "yes":
+                start_game()
+            break
+    print("That's okay, Have a great day")
+start_game()
